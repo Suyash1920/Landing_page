@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: cursive;
+        }
+        #navbar{
+            /* border: 2px solid red; */
+            display: flex;
+            z-index: 2;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+        }
+        #navbar::before{
+            content: "";
+            background-color: black;
+            position: absolute;
+            top:0px;
+            left:0px;
+            height: 100%;
+            width:100%;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        /* Navigation Bar: Logo and Image */
+        #logo{
+            margin: 10px 34px;
+        }
+
+        #logo img{
+            height: 59px;
+            margin: 3px 6px;
+        }
+        /* Navigation Bar: List Styling */
+        
+        #navbar ul{
+            display: flex;
+            font-family: 'Baloo Bhai', cursive;
+        }
+        
+        #navbar ul li{ 
+            list-style: none;
+            font-size: 1.3rem;
+        }
+        
+        #navbar ul li a{
+            color: white;
+            display: block;
+            padding: 3px 22px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        
+        #navbar ul li a:hover{
+            color: black;
+            background-color: white;
+        }
+        
+        .item{
+            /* border: 2px solid grey; */
+            display: inline-block;
+            padding: 8px;
+            /* justify-items: center; */
+            /* align-items: center; */
+            /* margin-top: 15px; */
+            margin-right: 35px;
+            color: white;
+            font-size: 20px;
+        }
+        .item:hover{
+            background-color: white;
+            color: black;
+            border-radius: 20px;
+            
+        }
+        /* Home Section */
+        #home{
+            display: flex;
+            flex-direction: column;
+            padding:3px 200px;
+            height: 550px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home::before{ 
+            /* border: 2px solid yellow; */
+            content: "";
+            position: absolute;
+            background: url("pexels-nikolaos-dimou-2506947.jpg") no-repeat center center/cover;
+            height: 642px;
+            top:0px;
+            left:0px;
+            width: 100%;
+            z-index: -1;
+            opacity:0.89;
+        }
+
+        #home h1{
+            /* border: 2px solid white; */
+            color:white;
+            text-align: center;
+            font-family: 'Bree Serif', serif;
+            font-size: 50px;
+            margin: 10px;
+        }
+        
+        #home p{
+            /* border: 2px solid white; */
+            color:white;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: 'Bree Serif', serif;
+            /* margin: 10px; */
+        }
+        .btn{
+            border: 2px solid wheat;
+            border-radius: 10px;
+            color: black;
+            background-color: white;
+            font-size: 20px;
+            margin: 15px;
+            padding: 5px;
+        }
+        .btn:hover{
+            background-color: gold;
+            
+        }
+        /* Courses Section */
+        .head{
+            /* border: 2px solid purple; */
+            font-size: 40px;
+            font-family: 'Bree Serif', serif;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .h-secondary{
+            display: flex;
+            justify-content: center;
+            font-family: 'Bree Serif', serif;
+            font-size: 30px;
+        }
+        #courses{
+            margin: 34px;
+            display: flex;
+        }
+        #courses .box{ 
+            border: 2px solid wheat;
+            padding: 14px;
+            margin: 2px 55px;
+            border-radius: 28px;
+            background: #f2f2f2;
+            margin-bottom: 20px;
+        }
+
+        #courses .box img{
+            height: 160px;
+            border-radius: 20px;
+            margin: 20px;
+            display: block;
+        }
+
+        #courses .box p{
+            font-family: 'Bree Serif', serif;
+
+        } 
+        .para{
+            display: flex;
+            align-items: center;
+            padding: 4px;
+            /* font-size: 17px; */
+        }
+        /* Clients Section */
+        #about-section{ 
+            position: relative;
+        }
+
+        #about-section::before{
+            content: "";
+            position: absolute;
+            background: url("bg.jpg");
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        #about{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-item{
+            padding: 34px;
+        }
+
+        #about img{
+            height: 124px;
+        }
+
+        /* Contact Section */
+        #contact-section{
+            position: relative;
+        }
+        #contact-section::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.7;
+            background: url("contact.jpg") no-repeat center center/cover;
+
+        }
+        #contact-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 34px;
+        }
+        #contact-box input, 
+        #contact-box textarea{
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 9px;
+            font-size: 1.1rem;
+        } 
+
+        #contact-box form{
+            width: 40%;
+        }
+
+        #contact-box label{
+        font-size: 1.3rem;
+        font-family: 'Bree Serif', serif;
+
+        }
+
+        .btn{
+            padding: 6px 20px;
+            border: 2px solid white;
+            background-color: brown;
+            color: white;
+            margin: 17px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor:pointer;
+        }
+
+        .center{
+            text-align: center;
+        }
+
+        footer{
+            background: black;
+            color: white;
+            padding: 9px 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="CodingArena.com">
+        </div>
+        <ul>
+            <a href=""><li class="item">Home</li></a>
+            <a href=""><li class="item">Courses</li></a>
+            <a href=""><li class="item">About Us</li></a>
+            <a href=""><li class="item">Contact Us</li></a>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">Welcome to CodingArena</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, corporis facere officia..
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+        <a href=""><button class="btn">Start Now</button></a>
+    </section>
+    
+    <section class="course-container">
+        <h1 class="head">Our Courses</h1>
+        <div id="courses">
+            <div class="box">
+                <h2 class="h-secondary">Pyhton</h2>
+                <img src="pexels-josh-sorenson-1714208.jpg" alt="Error">
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, culpa praesentium. Ipsam obcaecati odit fuga non libero nostrum, iusto ducimus voluptatibus saepe. Debitis expedita assumenda eligendi enim possimus, doloribus earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nemo corrupti id, vitae rem nihil reiciendis neque ipsam aliquid aliquam enim dolorum a sit omnis at necessitatibus laudantium, nisi voluptates accusamus, animi debitis accusantium optio nulla? Atque tenetur eaque a!</p>
+            </div>
+            <div class="box">
+                <h2 class="h-secondary">Django</h2>
+                <img src="pexels-josh-sorenson-1714208.jpg" alt="Error">
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, culpa praesentium. Ipsam obcaecati odit fuga non libero nostrum, iusto ducimus voluptatibus saepe. Debitis expedita assumenda eligendi enim possimus, doloribus earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nemo corrupti id, vitae rem nihil reiciendis neque ipsam aliquid aliquam enim dolorum a sit omnis at necessitatibus laudantium, nisi voluptates accusamus, animi debitis accusantium optio nulla? Atque tenetur eaque a!</p>
+            </div>
+            <div class="box">
+                <h2 class="h-secondary">Java</h2>
+                <img src="pexels-josh-sorenson-1714208.jpg" alt="Error">
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, culpa praesentium. Ipsam obcaecati odit fuga non libero nostrum, iusto ducimus voluptatibus saepe. Debitis expedita assumenda eligendi enim possimus, doloribus earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nemo corrupti id, vitae rem nihil reiciendis neque ipsam aliquid aliquam enim dolorum a sit omnis at necessitatibus laudantium, nisi voluptates accusamus, animi debitis accusantium optio nulla? Atque tenetur eaque a!</p>
+            </div>
+        </div>
+    </section>
+    <section id="about-section">
+        <h1 class="head">About Us</h1>
+        <div id="about">
+            <div class="about-item">
+                <img src="logo1.png" alt="Our Clients">
+            </div>
+            <div class="about-item">
+                <img src="logo2.png" alt="Our Clients">
+            </div>
+            <div class="about-item">
+                <img src="logo4.png" alt="Our Clients">
+            </div>
+            <div class="about-item">
+                <img src="logo3.png" alt="Our Clients">
+            </div>
+        </div>
+    </section>
+    <section id="contact-section">
+        <h1 class="head">Contact Us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="name" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message: </label>
+                    <textarea name="message" id="message" placeholder="Enter your message" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn">Reset</button>
+                    <button class="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="center">
+            Copyright &copy; www.CodingArena.com. All rights reserved!
+        </div>
+    </footer>
+</body>
+</html>
